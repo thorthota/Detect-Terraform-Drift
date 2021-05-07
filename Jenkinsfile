@@ -34,7 +34,7 @@ pipeline {
           ]) {
             script {
               sh '''
-					terraform plan -out=tfplan -input=false >> terraform-plan.log
+			terraform plan -out=tfplan -input=false >> terraform-plan.log
 	                cat terraform-plan.log
 	                if (grep -r "Terraform will perform the following actions" terraform-plan.log); then touch stringFound; fi
 	                     
